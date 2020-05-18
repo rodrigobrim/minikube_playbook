@@ -11,8 +11,9 @@
   tasks:
 
     - name: Garante que o {{ username }} esteja no grupo docker
-      user: "{{ username }}"
-      group: docker
+      user:
+        name: "{{ username }}"
+        group: docker
 
     - name: Inicia o minikube
       shell: minikube start --driver=docker
