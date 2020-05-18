@@ -1,0 +1,5 @@
+- hosts: localhost
+  vars:
+    minikube_version: '1.10.1'
+  roles:
+    - role: gantsign.minikube
