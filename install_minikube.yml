@@ -13,7 +13,7 @@
     - name: Garante que o {{ username }} esteja no grupo docker
       user:
         name: "{{ username }}"
-        group: docker
+        groups: docker
 
     - name: Inicia o minikube
       shell: minikube start --driver=docker
