@@ -14,10 +14,3 @@
       user:
         name: "{{ username }}"
         groups: docker
-
-    - name: Reset ssh connection
-      meta: reset_connection
-
-    - name: Inicia o minikube
-      shell: minikube start --driver=docker
-      become: no
