@@ -4,4 +4,15 @@
     minikube_version: '1.10.1'
   roles:
     - role: ericsysmin.docker.docker
+    - role: robertdebock.bootstrap
+    - role: robertdebock.kubectl
     - role: gantsign.minikube
+  tasks:
+
+    - name: Garante que o {{ username }} esteja no grupo docker
+      user: "{{ username }}"
+      group: docker
+
+    - name: Inicia o minikube
+      shell: minikube start --driver=docker
+      become: no
