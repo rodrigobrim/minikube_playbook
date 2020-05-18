@@ -2,4 +2,5 @@
   vars:
     minikube_version: '1.10.1'
   roles:
+    - role: ericsysmin.docker.docker
     - role: gantsign.minikube
